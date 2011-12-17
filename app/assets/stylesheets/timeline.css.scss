@@ -6,6 +6,7 @@ $timelineColor: #DCEAF4;
 
 #timeline {
   position: relative;
+  float: left;
   .line {
     position: absolute;
     border-radius: 3px;
