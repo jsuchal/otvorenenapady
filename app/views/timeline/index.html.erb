@@ -32,6 +32,15 @@
   <div class="row">
     <div class="span1">&nbsp;</div>
     <div id="events" class="span10">
+      <% @events.each do |event| %>
+        <%= render "events/#{event.category.downcase}", :event => event %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span1">&nbsp;</div>
+    <div id="events" class="span10">
       <div id="event-1" class="event">
         <h2><span class="label">14. decembra</span> <span class="label notice">Oznam</span><br><a href="#">Prenájom majetku</a></h2>
 
