@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'csv'
 namespace :everyblock do
   desc "Load restaurant reviews"
@@ -31,6 +33,22 @@ namespace :everyblock do
       e.published_at = row['published_at']
       e.valid_from = row['valid_from']
       e.valid_to = row['valid_to']
+      e.save
+    end
+  end
+
+  desc "Load discounts"
+  task "load:discounts" => :environment do
+    CSV.foreach(Rails.root.join("db", "zlavy.csv"), :headers => true) do |row|
+      e = Event.new
+      e.title = "Zľava: #{row['title']}"
+      e.message = row['name']
+      e.location_label = row['address']
+      e.published_at = row['published_at']
+      e.valid_from = row['valid_from']
+      e.valid_to = row['valid_to']
+      e.url = row['url']
+      e.category = "Discount"
       e.save
     end
   end
