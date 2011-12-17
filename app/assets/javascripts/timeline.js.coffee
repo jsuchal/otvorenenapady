@@ -9,7 +9,7 @@ $ ->
     .mouseout ->
       $.each($(this).data('event').split(','), (idx, id )-> $("#event-#{id}").removeClass("active"))
     .click ->
-      first_id = $(this).data('event').split(',')[0]
+      first_id = $(this).data('event').toString().split(',')[0]
       $("#event-#{first_id}")[0].scrollIntoView(true)
 
   $(".event")
