@@ -8,8 +8,9 @@ $timelineColor: #DCEAF4;
   position: relative;
   .line {
     position: absolute;
+    border-radius: 3px;
     background-color: $timelineColor;
-    width: 4px;
+    width: 5px;
 
     &:hover {
       cursor: pointer;
@@ -24,18 +25,18 @@ $timelineColor: #DCEAF4;
     .point {
       position: absolute;
       margin-top: -7px;
-      left: -2px;
+      left: -5px;
       background-color: white;
-      padding: 3px 0;
+      padding: 4px 0;
 
       &.more div {
-        width: 11px;
-        height: 11px;
-        margin-left: -1px;
+        width: 19px;
+        height: 19px;
+        margin-left: -2px;
         border-radius: 11px;
-        font-size: 9px;
+        font-size: 12px;
         text-align: center;
-        line-height: 11px;
+        line-height: 18px;
         font-weight: bold;
         color: white;
       }
@@ -43,20 +44,27 @@ $timelineColor: #DCEAF4;
       div {
         background-color: $timelineColor;
         border-radius: 8px;
-        width: 8px;
-        height: 8px;
-        &:hover {
-          cursor: pointer;
-          background-color: #BBD8E9;
-        }
+        width: 15px;
+        height: 15px;
       }
 
-      &.active {
-        left: -4px;
+      &.active, &:hover {
+        left: -15px;
+        margin-left: 0;
+        background-color: transparent;
+        z-index: 100;
+        margin-top: -11px;
         div {
-          width: 12px;
-          height: 12px;
-          background-color: red;
+          margin-left: -2px;
+          width: 31px;
+          height: 31px;
+          border-radius: 31px;
+          border: 4px solid #BBD8E9;
+          line-height: 31px;
+          font-size: 17px;
+          cursor: pointer;
+          color: #BBD8E9;
+          background-color: white;
         }
       }
 

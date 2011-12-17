@@ -54,7 +54,7 @@ module TimelineHelper
     last_start = 2000
     events.sort_by(&:published_at).each do |event|
       start = (max_date - event.published_at).to_i / total_days.to_f * size
-      if ((start - last_start).abs < 12) && points.last
+      if ((start - last_start).abs < 25) && points.last
         points.last[2] += 1
       else
         points << [event, start.to_i, 1]

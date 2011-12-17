@@ -11,13 +11,13 @@
              klass = cardinality > 1 ? :more : nil
           %>
           <div class="point <%= klass %>" style="top: <%= start %>px;" data-event="<%= event.id %>" title="<%= cardinality %>">
-            <div><% if cardinality > 1 %><%= cardinality %><% end %></div>
+            <div><% if cardinality > 1 %><%= cardinality %><% else %>&nbsp;<% end %></div>
           </div>
       <% end %>
     </div>
     <% lines.each do |line| %>
         <% event, depth, start, length = line %>
-        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*9 %>px;" data-event="<%= event.id %>">
+        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>">
           <div></div>
         </div>
     <% end %>
