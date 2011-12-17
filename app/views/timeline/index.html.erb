@@ -8,7 +8,7 @@
       <% points.each do |point| %>
           <%
              events, start, cardinality = point
-             klass = cardinality > 1 ? :more : nil
+             klass = cardinality > 1 ? :more : "category#{events.first.category}"
           %>
           <div class="point <%= klass %>" style="top: <%= start %>px;" data-event="<%= events.collect(&:id).join(',') %>">
             <div><% if cardinality > 1 %><%= cardinality %><% else %>&nbsp;<% end %></div>
@@ -16,8 +16,10 @@
       <% end %>
     </div>
     <% lines.each do |line| %>
-        <% event, depth, start, length = line %>
-        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>">
+        <%
+           event, depth, start, length = line
+        %>
+        <div class="line category<%= event.category %>" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>">
           <div></div>
         </div>
     <% end %>

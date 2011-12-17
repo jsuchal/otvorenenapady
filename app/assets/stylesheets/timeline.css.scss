@@ -4,6 +4,14 @@
 
 $timelineColor: #DCEAF4;
 
+h2 {
+  font-size: 18px;
+  line-height: 25px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 #timeline {
   position: relative;
   left: 180px;
@@ -70,7 +78,7 @@ $timelineColor: #DCEAF4;
           font-size: 17px;
           cursor: pointer;
           color: #BBD8E9;
-          background-color: white;
+          background-color: white !important;
         }
       }
 
@@ -91,9 +99,8 @@ $timelineColor: #DCEAF4;
     -moz-transform: rotate(-90deg);
   }
 
-  div .Review div {
-    background-color: yellow !important;
-  }
+  div .categoryReview div { background-color: #cd12fe !important; }
+  div .categoryMedia div { background-color: $timelineColor !important;}
 }
 
 .event {
