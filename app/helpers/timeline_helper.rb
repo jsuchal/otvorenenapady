@@ -34,12 +34,19 @@ module TimelineHelper
       end
     end
 
-    min_date = actions.first[0]
-    max_date = actions.last[0]
+    min_date = actions.first[0].beginning_of_month
+    max_date = actions.last[0].end_of_month
 
     total_days = (max_date - min_date).to_i
 
     size = 2000
+
+    anchors = []
+    t = min_date
+    while t < max_date
+      t = t + 1.month
+      anchors << [t, (max_date - t).to_i / total_days.to_f * size]
+    end
 
     lines = []
     events.each do |event|
@@ -62,6 +69,6 @@ module TimelineHelper
       end
     end
 
-    [lines, points]
+    [lines, points, anchors]
   end
 end

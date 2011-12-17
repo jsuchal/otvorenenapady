@@ -54,7 +54,7 @@ $timelineColor: #DCEAF4;
         margin-left: 0;
         background-color: transparent;
         z-index: 100;
-        margin-top: -11px;
+        margin-top: -17px;
         div {
           margin-left: -2px;
           width: 31px;
@@ -73,6 +73,17 @@ $timelineColor: #DCEAF4;
     &.culture {
       background-color: #90ee90;
     }
+  }
+
+  .anchor {
+    position: absolute;
+    left: -200px;
+    border-radius: 5px;
+    background-color: $timelineColor;
+    padding: 1px 3px;
+    color: white;
+    font-weight: bolder;
+    -webkit-transform: rotate(-90deg);
   }
 }
 

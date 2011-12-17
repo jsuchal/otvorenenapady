@@ -2,7 +2,7 @@
 
   <div id="timeline">
     <%
-      lines, points = timelineize(@events)
+      lines, points, anchors = timelineize(@events)
     %>
     <div class="line main" style="height: 2000px; left: 0;">
       <% points.each do |point| %>
@@ -20,6 +20,12 @@
         <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>">
           <div></div>
         </div>
+    <% end %>
+    <% anchors.each do |anchor| %>
+        <%
+           event, start = anchor
+        %>
+        <div class="anchor" style="top: <%= start %>px"><%= event.strftime("%b'%y") %></div>
     <% end %>
   </div>
 
