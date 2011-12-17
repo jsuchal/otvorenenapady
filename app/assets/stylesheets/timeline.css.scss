@@ -1,0 +1,66 @@
+// Place all the styles related to the timeline controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$timelineColor: #DCEAF4;
+
+#timeline {
+  position: relative;
+  .line {
+    position: absolute;
+    background-color: $timelineColor;
+    width: 4px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #BBD8E9;
+    }
+
+    &.main:hover {
+      background-color: $timelineColor;
+      cursor: default;
+    }
+
+    .point {
+      position: absolute;
+      left: -2px;
+      background-color: white;
+      padding: 3px 0;
+
+      div {
+        background-color: $timelineColor;
+        border-radius: 8px;
+        width: 8px;
+        height: 8px;
+        &:hover {
+          cursor: pointer;
+          background-color: #BBD8E9;
+        }
+      }
+
+    }
+    &.culture {
+            background-color: #90ee90;
+    }
+  }
+}
+
+.event {
+  border: 1px solid rgba(0,0,0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  h2 {
+    background-color: #FEFBF3;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 15px;           
+    a {
+      color: #404040;
+    }
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+}

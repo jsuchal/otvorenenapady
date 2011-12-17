@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everyblock</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="topbar" data-scrollspy="scrollspy">
+  <div class="topbar-inner">
+    <div class="container">
+      <a class="brand" href="#">... &gt; <strong>Karlova ves</strong></a>
+      <ul class="nav">
+        <li class="active"><a href="#overview">Kultúra</a></li>
+        <li><a href="#about">Správy</a></li>
+        <li><a href="#grid-system">Fondy</a></li>
+        <li><a href="#grid-system">Zľavy</a></li>
+        <li><a href="#grid-system">Kriminalita</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <%= yield %>
+</div>
+
+</body>
+</html>
