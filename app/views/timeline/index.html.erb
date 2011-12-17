@@ -4,7 +4,7 @@
     <%
       lines, points, anchors = timelineize(@events)
     %>
-    <div class="line main" style="height: 5000px; left: 0;">
+    <div class="line main" style="height: 8000px; left: 0;">
       <% points.each do |point| %>
           <%
              events, start, cardinality = point
@@ -32,7 +32,7 @@
   </div>
 
   <div class="row">
-    <div class="span4">&nbsp;</div>
+    <div class="span5">&nbsp;</div>
     <div id="events" class="span10">
       <% @events.each do |event| %>
         <%= render "events/#{event.category.downcase}", :event => event %>

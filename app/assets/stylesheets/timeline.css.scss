@@ -14,7 +14,7 @@ h2 {
 
 #timeline {
   position: relative;
-  left: 180px;
+  left: 240px;
   .line {
     position: absolute;
     border-radius: 3px;
@@ -90,7 +90,7 @@ h2 {
 
   .anchor {
     position: absolute;
-    left: -200px;
+    left: -250px;
     border-radius: 5px;
     padding: 1px 5px;
     color: #d3d3d3;
@@ -98,10 +98,13 @@ h2 {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
   }
-
-  div .categoryReview div { background-color: #cd12fe !important; }
-  div .categoryMedia div { background-color: $timelineColor !important;}
 }
+
+  div .categoryReview div, .label.categoryReview { background-color: #cd12fe !important; }
+  div .categoryMedia div, .label.categoryMedia { background-color: $timelineColor !important;}
+  div .categoryGrant div, .line.categoryGrant, .label.categoryGrant { background-color: #78cd54 !important;}
+  div .categoryDiscount div, .line.categoryDiscount, .label.categoryDiscount { background-color: #3854ab !important;}
+
 
 .event {
   border: 1px solid rgba(0,0,0, 0.2);
