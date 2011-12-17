@@ -1,0 +1,16 @@
+<div id="event-<%= event.id %>" class="event">
+  <div class="header">
+    <p class="tags"><span class="label notice">Granty</span></p>
+    <h2><a href="#"><%= event.title %></a></h2>
+    <p class="info"><%= event.published_at %></p>
+    <p class="info">Rozpočet: <%= number_to_currency(event.detailed.budget, :unit => "&euro;", :delimiter => ' ', :format => "%n&nbsp;%u", :precision => 0) %></p>
+  </div>
+
+  <div class="content">
+    <%= simple_format(truncate(event.message, :length => 500)) %>
+  </div>
+  <div class="interactions">
+    <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">5 komentárov</a>
+      <a class="watch" href="#">sledovať</a></p>
+  </div>
+</div>
