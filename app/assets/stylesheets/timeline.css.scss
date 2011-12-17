@@ -40,27 +40,87 @@ $timelineColor: #DCEAF4;
 
     }
     &.culture {
-            background-color: #90ee90;
+      background-color: #90ee90;
     }
   }
 }
 
 .event {
   border: 1px solid rgba(0,0,0, 0.2);
-  border-radius: 5px;
+  border-radius: 5px;        
+  box-shadow: 3px 3px 2px #fafafa;
   margin-bottom: 20px;
-  padding-bottom: 15px;
-  h2 {
-    background-color: #FEFBF3;
+
+  .header {
+    background-color: #fcfcfc;
     border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     padding: 10px 20px;
-    margin-bottom: 15px;           
-    a {
-      color: #404040;
+    padding-bottom: 1px;
+    margin-bottom: 15px;
+
+    .tags {
+      line-height: 30px;
+      float: right;
+    }
+
+    h2 {
+      a {
+        color: #404040;
+      }
+    }
+    .info {
+      font-size: smaller;
     }
   }
 
   .content {
-    padding: 0 20px;
+    adding: 0 20px;
+    .image {
+      text-align: center;
+    }
+    img {
+      border: 1px solid gray;
+    }
+  }
+
+  .interactions {
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    background-color: #fcfcfc;
+    padding: 10px 20px;
+    margin-top: 10px;
+    p {
+      margin: 0;
+    }
+    
+    p a {
+      background-repeat: no-repeat;
+      background-position: left;
+      padding-left: 22px;
+      padding-right: 10px;
+
+      &.add {
+        background-image: url('/images/icons/comment_add.png');
+      }
+      &.many {
+        background-image: url('/images/icons/comments.png');
+      }
+      &.like {
+        background-image: url('/images/icons/thumb_up.png');
+        color: green;
+      }
+      &.dislike {
+        background-image: url('/images/icons/thumb_down.png');
+        color: red;
+      }
+      &.watch {
+        background-image: url('/images/icons/eye.png');
+      }
+    }
   }
 }
