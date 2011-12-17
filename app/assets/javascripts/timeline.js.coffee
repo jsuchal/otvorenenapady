@@ -5,9 +5,9 @@
 $ ->
   $(".point[data-event]")
     .mouseover ->
-      $.each($(this).data('event').split(','), (idx, id )-> $("#event-#{id}").addClass("active"))
+      $.each($(this).data('event').toString().split(','), (idx, id )-> $("#event-#{id}").addClass("active"))
     .mouseout ->
-      $.each($(this).data('event').split(','), (idx, id )-> $("#event-#{id}").removeClass("active"))
+      $.each($(this).data('event').toString().split(','), (idx, id )-> $("#event-#{id}").removeClass("active"))
     .click ->
       first_id = $(this).data('event').toString().split(',')[0]
       $("#event-#{first_id}")[0].scrollIntoView(true)
