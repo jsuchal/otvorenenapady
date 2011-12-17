@@ -136,4 +136,25 @@ $timelineColor: #DCEAF4;
       }
     }
   }
+  div.comments {
+    border-top: 1px solid rgba(0,0,0, 0.05);
+    margin-top: 10px;
+    padding-top: 10px;
+
+    .comment {
+      margin: 5px 0;
+      overflow: hidden;
+      .user {
+        float: left;
+      }
+      .content {
+        margin-left: 50px;
+      }
+      textarea {
+        width: 470px;
+        height: 80px;
+        margin-bottom: 15px;
+      }
+    }
+  }
 }

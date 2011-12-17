@@ -73,6 +73,26 @@
         <div class="interactions">
           <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">5 komentárov</a>
             <a class="watch" href="#">sledovať</a></p>
+
+          <div class="comments">
+            <div class="comment">
+              <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+              <div class="content"><p>Toto fakt nie!</p></div>
+            </div>
+            <div class="comment">
+              <div class="user"><%= gravatar_for('kramas.tomas@gmail.com', 40) %></div>
+              <div class="content"><p>Tak som sa ponahlal ne?</p></div>
+            </div>
+            <div class="comment">
+              <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+              <div class="content">
+                <%= text_area_tag :comment %>
+                <br>
+                <%= submit_tag 'Odoslať', class: 'btn primary' %>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
