@@ -6,6 +6,7 @@ $timelineColor: #DCEAF4;
 
 #timeline {
   position: relative;
+  left: 180px;
   .line {
     position: absolute;
     border-radius: 3px;
@@ -14,10 +15,15 @@ $timelineColor: #DCEAF4;
 
     &:hover {
       cursor: pointer;
+      margin-left: -2px;
+      width: 9px;
+      border-radius: 9px;
       background-color: #BBD8E9;
     }
 
     &.main:hover {
+      width: 5px;
+      margin-left: 0;
       background-color: $timelineColor;
       cursor: default;
     }
@@ -78,9 +84,8 @@ $timelineColor: #DCEAF4;
     position: absolute;
     left: -200px;
     border-radius: 5px;
-    background-color: $timelineColor;
-    padding: 1px 3px;
-    color: white;
+    padding: 1px 5px;
+    color: #d3d3d3;
     font-weight: bolder;
     -webkit-transform: rotate(-90deg);
   }
