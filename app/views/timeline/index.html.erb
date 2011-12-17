@@ -4,17 +4,20 @@
     <%
       lines, points = timelineize(@events)
     %>
-    <div class="line main" style="height: 800px; left: 0;">
+    <div class="line main" style="height: 2000px; left: 0;">
       <% points.each do |point| %>
-          <% event, start = point %>
-          <div class="point" style="top: <%= start %>px;" data-event="<%= event.id %>">
-            <div></div>
+          <%
+             event, start, cardinality = point
+             klass = cardinality > 1 ? :more : nil
+          %>
+          <div class="point <%= klass %>" style="top: <%= start %>px;" data-event="<%= event.id %>" title="<%= cardinality %>">
+            <div><% if cardinality > 1 %><%= cardinality %><% end %></div>
           </div>
       <% end %>
     </div>
     <% lines.each do |line| %>
         <% event, depth, start, length = line %>
-        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*9 %>px;" data-event="#{event.id">
+        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*9 %>px;" data-event="<%= event.id %>">
           <div></div>
         </div>
     <% end %>

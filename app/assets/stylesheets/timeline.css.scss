@@ -23,9 +23,22 @@ $timelineColor: #DCEAF4;
 
     .point {
       position: absolute;
+      margin-top: -7px;
       left: -2px;
       background-color: white;
       padding: 3px 0;
+
+      &.more div {
+        width: 11px;
+        height: 11px;
+        margin-left: -1px;
+        border-radius: 11px;
+        font-size: 9px;
+        text-align: center;
+        line-height: 11px;
+        font-weight: bold;
+        color: white;
+      }
 
       div {
         background-color: $timelineColor;
