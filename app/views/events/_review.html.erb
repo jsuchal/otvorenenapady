@@ -8,8 +8,5 @@
   <div class="content">
     <%= simple_format(truncate(event.message, :length => 500)) %>
   </div>
-  <div class="interactions">
-    <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">5 komentárov</a>
-      <a class="watch" href="#">sledovať</a></p>
-  </div>
+  <%= render 'events/interactions', :event => event %>
 </div>
