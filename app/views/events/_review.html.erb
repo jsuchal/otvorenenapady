@@ -1,0 +1,15 @@
+<div id="event-<%= event.id %>" class="event">
+  <div class="header">
+    <p class="tags"><span class="label notice">Recenzie</span></p>
+    <h2><a href="#"><%= event.title %></a></h2>
+    <p class="info"><%= event.published_at %></p>
+  </div>
+
+  <div class="content">
+    <%= simple_format(truncate(event.message, :length => 500)) %>
+  </div>
+  <div class="interactions">
+    <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">5 komentárov</a>
+      <a class="watch" href="#">sledovať</a></p>
+  </div>
+</div>
