@@ -63,7 +63,7 @@ namespace :everyblock do
         e.published_at = row['published_at']
         e.valid_from = row['valid_from']
         e.valid_to = row['valid_to']
-        e.category = "Fund"
+        e.category = "Grant"
         g = Grant.new
         g.subject = row['subject']
         g.budget = row['budget']
