@@ -1,4 +1,6 @@
 Everyblock::Application.routes.draw do
+  resources :events
+
   resources :timeline
 
   # The priority is based upon order of creation:
