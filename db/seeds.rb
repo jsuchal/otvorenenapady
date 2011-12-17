@@ -10,6 +10,8 @@ require 'csv'
 
 CSV.foreach(Rails.root.join("db","spravy.csv"), :headers => true) do |row|
   e = Event.new
+  e.title = row['title']
+  e.message = row['message']
   e.category = row['category']
   e.location_label = row['location_label']
   e.url = row['url']
