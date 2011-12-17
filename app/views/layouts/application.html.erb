@@ -12,11 +12,8 @@
     <div class="container">
       <a class="brand" href="#">... &gt; <strong>Karlova ves</strong></a>
       <ul class="nav">
-        <li class="active"><a href="#overview">Kultúra</a></li>
-        <li><a href="#about">Správy</a></li>
-        <li><a href="#grid-system">Fondy</a></li>
-        <li><a href="#grid-system">Zľavy</a></li>
-        <li><a href="#grid-system">Kriminalita</a></li>
+        <li><%= link_to 'Médiá', timeline_index_path(:category => 'Media') %></li>
+        <li><%= link_to 'Recenzie', timeline_index_path(:category => 'Review') %></li>
       </ul>
     </div>
   </div>
