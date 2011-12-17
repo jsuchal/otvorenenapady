@@ -39,7 +39,7 @@ module TimelineHelper
 
     total_days = (max_date - min_date).to_i
 
-    size = 2000
+    size = 5000
 
     anchors = []
     t = min_date

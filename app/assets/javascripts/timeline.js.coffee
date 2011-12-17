@@ -18,3 +18,5 @@ $ ->
     .mouseout ->
       id = $(this).attr("id").split("-")[1]
       $(".point[data-event=#{id}]").removeClass("active")
+
+  $("#timeline").keepInView(stopAt: $("#events").height() + $("#events").offset().top)

@@ -89,6 +89,10 @@ $timelineColor: #DCEAF4;
     font-weight: bolder;
     -webkit-transform: rotate(-90deg);
   }
+
+  div .Review div {
+    background-color: yellow !important;
+  }
 }
 
 .event {
