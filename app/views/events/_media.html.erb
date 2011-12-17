@@ -9,7 +9,16 @@
     <%= simple_format(truncate(event.message, :length => 500)) %>
   </div>
   <div class="interactions">
-    <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">5 komentárov</a>
-      <a class="watch" href="#">sledovať</a></p>
+    <p><a class="like" href=""></a> <a class="dislike" href=""></a> <a href="javascript:void" class="comments add" data-toggle-id="comments-<%= event.id %>">Pridať komentár</a> </p>
+    <div class="comments" id="comments-<%= event.id %>" style="display: none;">
+      <div class="comment">
+        <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+        <div class="content">
+          <%= text_area_tag :comment %>
+          <br>
+          <%= submit_tag 'Odoslať', class: 'btn primary' %>
+        </div>
+      </div>
+    </div> 
   </div>
 </div>
