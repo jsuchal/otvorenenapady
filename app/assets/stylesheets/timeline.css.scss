@@ -38,6 +38,15 @@ $timelineColor: #DCEAF4;
         }
       }
 
+      &.active {
+        left: -4px;
+        div {
+          width: 12px;
+          height: 12px;
+          background-color: red;
+        }
+      }
+
     }
     &.culture {
       background-color: #90ee90;
@@ -47,9 +56,13 @@ $timelineColor: #DCEAF4;
 
 .event {
   border: 1px solid rgba(0,0,0, 0.2);
-  border-radius: 5px;        
+  border-radius: 5px;
   box-shadow: 3px 3px 2px #fafafa;
   margin-bottom: 20px;
+
+  &.active {
+    background-color: #FEE9CC;
+  }
 
   .header {
     background-color: #fcfcfc;
@@ -97,7 +110,7 @@ $timelineColor: #DCEAF4;
     p {
       margin: 0;
     }
-    
+
     p a {
       background-repeat: no-repeat;
       background-position: left;
