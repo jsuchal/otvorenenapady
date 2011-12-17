@@ -63,8 +63,9 @@ module TimelineHelper
       start = (max_date - event.published_at).to_i / total_days.to_f * size
       if ((start - last_start).abs < 25) && points.last
         points.last[2] += 1
+        points.last[0] << event
       else
-        points << [event, start.to_i, 1]
+        points << [[event], start.to_i, 1]
         last_start = start
       end
     end

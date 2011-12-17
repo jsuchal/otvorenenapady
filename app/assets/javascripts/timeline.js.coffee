@@ -5,11 +5,12 @@
 $ ->
   $(".point[data-event]")
     .mouseover ->
-      $("#event-#{$(this).data('event')}").addClass("active")
+      $.each($(this).data('event').split(','), (idx, id )-> $("#event-#{id}").addClass("active"))
     .mouseout ->
-      $("#event-#{$(this).data('event')}").removeClass("active")
+      $.each($(this).data('event').split(','), (idx, id )-> $("#event-#{id}").removeClass("active"))
     .click ->
-      $("#event-#{$(this).data('event')}")[0].scrollIntoView(true);
+      first_id = $(this).data('event').split(',')[0]
+      $("#event-#{first_id}")[0].scrollIntoView(true)
 
   $(".event")
     .mouseover ->
