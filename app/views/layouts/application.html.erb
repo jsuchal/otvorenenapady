@@ -10,7 +10,7 @@
 <div class="topbar" data-scrollspy="scrollspy">
   <div class="topbar-inner">
     <div class="container">
-      <a class="brand" href="#">... &gt; <strong>Karlova ves</strong></a>
+      <%= link_to 'Karlova Ves', timeline_index_path, :class => 'brand' %>
       <ul class="nav">
         <li><%= link_to 'Médiá', timeline_index_path(:category => 'Media') %></li>
         <li><%= link_to 'Recenzie', timeline_index_path(:category => 'Review') %></li>
