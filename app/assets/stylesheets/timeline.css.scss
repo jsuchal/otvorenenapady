@@ -123,8 +123,12 @@ h2 {
   box-shadow: 3px 3px 2px #fafafa;
   margin-bottom: 20px;
 
+  &.inactive {
+    opacity: 0.2;
+  }
+
   &.active {
-    background-color: #FEE9CC;
+    opacity: 1;
   }
 
   .header {
