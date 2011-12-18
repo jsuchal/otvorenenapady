@@ -10,3 +10,9 @@
 .top-main {
     padding-top: 80px;
 }
+
+.action-button {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+}

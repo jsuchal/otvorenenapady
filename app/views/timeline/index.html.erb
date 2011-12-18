@@ -4,20 +4,29 @@
     <%
       lines, points, anchors = timelineize(@events)
     %>
-    <div class="line main" style="height: 5000px; left: 0;">
+    <div class="line main" style="height: 8000px; left: 0;">
       <% points.each do |point| %>
           <%
              events, start, cardinality = point
-             klass = cardinality > 1 ? :more : nil
+             klass = cardinality > 1 ? :more : "category#{events.first.category}"
+             content = events.collect { |e| "<li>#{e.title}</li>" }.join
+             if events.size > 1
+               in_period = "v období #{l events.first.published_at, :format => :short} &mdash; #{l events.last.published_at, :format => :short}"
+             else
+               in_period = "dňa #{l events.first.published_at}"
+             end
+             title = "#{slovak_pluralize(cardinality, 'udalosť', "udalosti", "udalostí")} #{in_period}"
           %>
-          <div class="point <%= klass %>" style="top: <%= start %>px;" data-event="<%= events.collect(&:id).join(',') %>">
+          <div class="point <%= klass %>" style="top: <%= start %>px;" data-event="<%= events.collect(&:id).join(',') %>" title="<%= title %>" rel="popover" data-content="<ul><%= content %></ul>">
             <div><% if cardinality > 1 %><%= cardinality %><% else %>&nbsp;<% end %></div>
           </div>
       <% end %>
     </div>
     <% lines.each do |line| %>
-        <% event, depth, start, length = line %>
-        <div class="line" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>">
+        <%
+           event, depth, start, length = line
+        %>
+        <div class="line category<%= event.category %>" style="height: <%= length %>px; top: <%= start %>px; left: -<%= depth*18+7 %>px;" data-event="<%= event.id %>" rel="popover" data-content="<%= event.title %>" title="<%= l event.valid_from, :format => :short %> &mdash; <%= l event.valid_to, :format => :short %>">
           <div></div>
         </div>
     <% end %>
@@ -30,8 +39,8 @@
   </div>
 
   <div class="row">
-    <div class="span4">&nbsp;</div>
-    <div id="events" class="span10">
+    <div class="span5">&nbsp;</div>
+    <div id="events" class="span11">
       <% @events.each do |event| %>
         <%= render "events/#{event.category.downcase}", :event => event %>
       <% end %>

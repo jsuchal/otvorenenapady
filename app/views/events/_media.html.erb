@@ -1,25 +1,13 @@
 <div id="event-<%= event.id %>" class="event">
   <div class="header">
-    <p class="tags"><span class="label notice">Médiá</span></p>
+    <p class="tags"><span class="label category<%= event.category %>">Médiá</span></p>
     <h2><a href="#"><%= event.title %></a></h2>
-    <p class="info"><%= event.published_at %></p>
+    <p class="info"><%= l event.published_at, :format => :short %></p>
   </div>
 
   <div class="content">
     <%= simple_format(truncate(event.message, :length => 500)) %>
     <%= render "events/map", :event => event %>
   </div>
-  <div class="interactions">
-    <p><a class="like" href=""></a> <a class="dislike" href=""></a> <a href="javascript:void" class="comments add" data-toggle-id="comments-<%= event.id %>">Pridať komentár</a> </p>
-    <div class="comments" id="comments-<%= event.id %>" style="display: none;">
-      <div class="comment">
-        <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
-        <div class="content">
-          <%= text_area_tag :comment %>
-          <br>
-          <%= submit_tag 'Odoslať', class: 'btn primary' %>
-        </div>
-      </div>
-    </div> 
-  </div>
+  <%= render 'events/interactions', :event => event %>
 </div>

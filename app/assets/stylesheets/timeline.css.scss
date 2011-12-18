@@ -4,16 +4,35 @@
 
 $timelineColor: #DCEAF4;
 
+h2 {
+  font-size: 18px;
+  line-height: 25px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 #timeline {
   position: relative;
-  left: 180px;
+  left: 240px;
   .line {
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+             -moz-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+              -ms-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+               -o-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+                  transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+
     position: absolute;
     border-radius: 3px;
     background-color: $timelineColor;
     width: 5px;
 
-    &:hover {
+    &:hover, &.active {
+      -webkit-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+         -moz-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          -ms-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+           -o-transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+              transition: all 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
       cursor: pointer;
       margin-left: -2px;
       width: 9px;
@@ -70,7 +89,7 @@ $timelineColor: #DCEAF4;
           font-size: 17px;
           cursor: pointer;
           color: #BBD8E9;
-          background-color: white;
+          background-color: white !important;
         }
       }
 
@@ -82,7 +101,7 @@ $timelineColor: #DCEAF4;
 
   .anchor {
     position: absolute;
-    left: -200px;
+    left: -250px;
     border-radius: 5px;
     padding: 1px 5px;
     color: #d3d3d3;
@@ -90,11 +109,13 @@ $timelineColor: #DCEAF4;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
   }
-
-  div .Review div {
-    background-color: yellow !important;
-  }
 }
+
+  div .categoryReview div, .label.categoryReview { background-color: #cd12fe !important; }
+  div .categoryMedia div, .label.categoryMedia { background-color: $timelineColor !important;}
+  div .categoryGrant div, .line.categoryGrant, .label.categoryGrant { background-color: #78cd54 !important;}
+  div .categoryDiscount div, .line.categoryDiscount, .label.categoryDiscount { background-color: #3854ab !important;}
+
 
 .event {
   border: 1px solid rgba(0,0,0, 0.2);
@@ -133,11 +154,14 @@ $timelineColor: #DCEAF4;
 
   .content {
     padding: 0 20px;
+    height: 150px;
     .image {
       text-align: center;
     }
     img {
       border: 1px solid gray;
+      float:right;
+      margin: 0 10px;
     }
   }
 
@@ -193,7 +217,7 @@ $timelineColor: #DCEAF4;
         margin-left: 50px;
       }
       textarea {
-        width: 470px;
+        width: 515px;
         height: 80px;
         margin-bottom: 15px;
       }

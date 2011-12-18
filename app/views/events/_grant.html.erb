@@ -1,12 +1,12 @@
 <div id="event-<%= event.id %>" class="event">
   <div class="header">
-    <p class="tags"><span class="label category<%= event.category %>">Recenzie</span></p>
+    <p class="tags"><span class="label category<%= event.category %>">Granty</span></p>
     <h2><a href="#"><%= event.title %></a></h2>
     <p class="info"><%= l event.published_at, :format => :short %></p>
+    <p class="info">Rozpočet: <%= number_to_currency(event.detailed.budget, :unit => "&euro;", :delimiter => ' ', :format => "%n&nbsp;%u", :precision => 0) %></p>
   </div>
 
   <div class="content">
-    <%= image_tag "/images/reviews/#{event.detailed.slug}.jpeg", :size => "174x116"%>
     <%= simple_format(truncate(event.message, :length => 500)) %>
   </div>
   <%= render 'events/interactions', :event => event %>
