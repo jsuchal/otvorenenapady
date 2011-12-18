@@ -7,6 +7,7 @@
 
   <div class="content">
     <%= simple_format(truncate(event.message, :length => 500)) %>
+    <%= render "events/map", :event => event %>
   </div>
   <div class="interactions">
     <p><a class="like" href=""></a> <a class="dislike" href=""></a> <a href="javascript:void" class="comments add" data-toggle-id="comments-<%= event.id %>">Pridať komentár</a> </p>
