@@ -14,7 +14,8 @@ $ ->
         $(".line[data-event=#{id}]").removeClass("active")
     .click ->
       first_id = $(this).data('event').toString().split(',')[0]
-      $("#event-#{first_id}")[0].scrollIntoView(true)
+      scrollEventIntoView($("#event-#{first_id}"))
+      return false
     .popover(html: true, animate: false)
 
   $(".event")
@@ -31,7 +32,8 @@ $ ->
 
     $(".line")
       .click ->
-        $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
+        scrollEventIntoView($("#event-#{$(this).data('event')}"))
+        return false
       .popover(html: true, animate: false)
       .mouseover ->
         return unless $(this).data('event')
@@ -62,4 +64,6 @@ $ ->
       $('.event').removeClass('inactive')
       $("#event-#{event_id}").removeClass("active")
 
+  scrollEventIntoView = ($element) ->
+    $(document).scrollTop($element.offset().top - 50)
 
