@@ -2,6 +2,7 @@
   <p><a class="like" href=""></a>
     <a class="dislike" href=""></a>
     <a href="#" class="comments add" data-toggle-id="comments-<%= event.id %>">Pridať komentár</a>
+    <a href="#" class="map add" data-toggle-id="map-<%= event.id %>" data-map-id="<%= event.id %>" data-map-location="<%= event.location_label %>" data-map-location-lon="<%= event.lng %>" data-map-location-lat="<%= event.lat %>">Ukázať mapu</a>
   </p>
   <div class="comments" id="comments-<%= event.id %>" style="display: none;">
     <div class="comment">
@@ -13,7 +14,7 @@
       </div>
     </div>
   </div>
-  <div class="map" id="map-<%= event.id %>" data-map-id="<%= event.id %>" data-map-location="<%= event.location_label %>" data-map-location-lon="<%= event.lng %>" data-map-location-lat="<%= event.lat %>">
+  <div class="map" id="map-<%= event.id %>" style="display: none;">
     <%= render 'events/map', :event => event%>
   </div>
 </div>

@@ -1,8 +1,9 @@
 $(function() {
-    $('.map').each(function() {
+
+    $('.map').click(function() {
         var map_id = $(this).data('map-id');
         var map_canvas_id = "map_canvas_" + map_id;
-        //var location = $(this).data("map-location");
+        var location = $(this).data("map-location");
         var location_lat = $(this).data("map-location-lat");
         var location_lon = $(this).data("map-location-lon");
         //little_map_label(map_canvas_id, location);
@@ -46,4 +47,10 @@ $(function() {
             }
         });
     }
+    $('a[data-toggle-id="map-111"]').click();
+    $('a[data-toggle-id="map-112"]').click();
+    $('a[data-toggle-id="map-114"]').click();
+    $('a[data-toggle-id="map-115"]').click();
+    $('a[data-toggle-id="map-116"]').click();
+
 });
