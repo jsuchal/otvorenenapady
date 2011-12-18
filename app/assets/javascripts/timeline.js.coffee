@@ -37,10 +37,12 @@ $ ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         updatePointClass(rel_event_id, "add")
+        $("#event-#{rel_event_id}").addClass("active")
       .mouseout ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         updatePointClass(rel_event_id, "remove")
+        $("#event-#{rel_event_id}").removeClass("active")
 
   updatePointClass = (event_id, action) ->
     $(".point[data-event]").each (element) ->
