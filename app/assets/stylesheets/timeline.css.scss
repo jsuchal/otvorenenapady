@@ -200,6 +200,9 @@ h2 {
       &.watch {
         background-image: url('/images/icons/eye.png');
       }
+      &.map {
+        background-image: url('/images/icons/world.png');
+      }
     }
   }
   div.comments {
@@ -230,5 +233,9 @@ h2 {
         font-size: smaller;
       }
     }
+  }
+  div.map {
+    margin-top: 10px;
+    padding-top: 10px;
   }
 }

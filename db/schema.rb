@@ -34,11 +34,6 @@ ActiveRecord::Schema.define(:version => 20111218081448) do
     t.string  "subject"
   end
 
-  create_table "grants", :force => true do |t|
-    t.integer "budget"
-    t.string  "subject"
-  end
-
   create_table "reviews", :force => true do |t|
     t.string "name"
     t.string "address"

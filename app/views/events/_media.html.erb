@@ -7,7 +7,6 @@
 
   <div class="content">
     <%= simple_format(truncate(event.message, :length => 500)) %>
-    <%= render "events/map", :event => event %>
   </div>
   <%= render 'events/interactions', :event => event %>
 </div>
