@@ -9,7 +9,7 @@
           <%
              events, start, cardinality = point
              klass = cardinality > 1 ? :more : "category#{events.first.category}"
-             content = events.collect { |e| "<li>#{e.title}</li>" }.join
+             content = events.collect { |e| "<li>#{event_category_label(e)} #{e.title}</li>" }.join
              if events.size > 1
                in_period = "v období #{l events.first.published_at, :format => :short} &mdash; #{l events.last.published_at, :format => :short}"
              else
