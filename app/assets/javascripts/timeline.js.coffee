@@ -31,6 +31,20 @@ $ ->
       .click ->
         $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
       .popover(html: true)
+      .mouseover ->
+        rel_event_id = $(this).data('event').toString()
+        $(".point[data-event]").each (element) ->
+          $element = $(this)
+          if $element.data('event').toString().split(',').indexOf(rel_event_id) != -1
+            $element.addClass("active")
+            return
+      .mouseout ->
+        rel_event_id = $(this).data('event').toString()
+        $(".point[data-event]").each (element) ->
+          $element = $(this)
+          if $element.data('event').toString().split(',').indexOf(rel_event_id) != -1
+            $element.removeClass("active")
+            return
 
 
 
