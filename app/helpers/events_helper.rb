@@ -10,6 +10,8 @@ module EventsHelper
       title = "Granty"
     when 'Discount' then
       title = "Zľava"
+    when 'Lost_and_Found' then
+      title = "Straty a nálezy"
     end
     "<span class='label category#{event.category}'>#{title}</span>"
   end

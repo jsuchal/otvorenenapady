@@ -48,6 +48,9 @@ $(function() {
             }
         });
     }
+    $('a[data-toggle-id="map-143"]').click();
+    $('a[data-toggle-id="map-144"]').click();
+    $('a[data-toggle-id="map-145"]').click();
     $('a[data-toggle-id="map-111"]').click();
     $('a[data-toggle-id="map-112"]').click();
     $('a[data-toggle-id="map-114"]').click();
