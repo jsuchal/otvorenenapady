@@ -154,11 +154,14 @@ h2 {
 
   .content {
     padding: 0 20px;
+    height: 150px;
     .image {
       text-align: center;
     }
     img {
       border: 1px solid gray;
+      float:right;
+      margin: 0 10px;
     }
   }
 

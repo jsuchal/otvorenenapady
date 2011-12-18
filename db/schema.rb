@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217202249) do
+ActiveRecord::Schema.define(:version => 20111217220308) do
 
   create_table "events", :force => true do |t|
     t.string  "title"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111217202249) do
     t.string "name"
     t.string "address"
     t.string "website"
+    t.string "slug"
   end
 
 end

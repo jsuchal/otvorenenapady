@@ -2,7 +2,7 @@
   <div class="header">
     <p class="tags"><span class="label category<%= event.category %>">Zľavy</span></p>
     <h2><a href="#"><%= event.title %></a></h2>
-    <p class="info"><%= event.published_at %></p>
+    <p class="info"><%= l event.published_at, :format => :short %></p>
   </div>
 
   <div class="content">
