@@ -8,6 +8,7 @@ $(function() {
         var location_lon = $(this).data("map-location-lon");
         //little_map_label(map_canvas_id, location);
         little_map_gps(map_canvas_id, location_lat, location_lon);
+        return false;
     });
 
     function little_map_gps(div_id, lat, lon){
