@@ -15,7 +15,7 @@ $ ->
     .click ->
       first_id = $(this).data('event').toString().split(',')[0]
       $("#event-#{first_id}")[0].scrollIntoView(true)
-    .popover(html: true)
+    .popover(html: true, animate: false)
 
   $(".event")
     .mouseover ->
@@ -30,8 +30,10 @@ $ ->
     $(".line")
       .click ->
         $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
-      .popover(html: true)
+      .popover(html: true, animate: false)
+
       .mouseover ->
+        return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         $(".point[data-event]").each (element) ->
           $element = $(this)
@@ -39,6 +41,7 @@ $ ->
             $element.addClass("active")
             return
       .mouseout ->
+        return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         $(".point[data-event]").each (element) ->
           $element = $(this)
