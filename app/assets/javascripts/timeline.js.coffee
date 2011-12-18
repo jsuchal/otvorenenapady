@@ -22,33 +22,33 @@ $ ->
       id = $(this).attr("id").split("-")[1]
       $(".point[data-event=#{id}]").addClass("active")
       $(".line[data-event=#{id}]").addClass("active")
+      updatePointClass(id, "add")
     .mouseout ->
       id = $(this).attr("id").split("-")[1]
       $(".point[data-event=#{id}]").removeClass("active")
       $(".line[data-event=#{id}]").removeClass("active")
+      updatePointClass(id, "remove")
 
     $(".line")
       .click ->
         $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
       .popover(html: true, animate: false)
-
       .mouseover ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
-        $(".point[data-event]").each (element) ->
-          $element = $(this)
-          if $element.data('event').toString().split(',').indexOf(rel_event_id) != -1
-            $element.addClass("active")
-            return
+        updatePointClass(rel_event_id, "add")
       .mouseout ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
-        $(".point[data-event]").each (element) ->
-          $element = $(this)
-          if $element.data('event').toString().split(',').indexOf(rel_event_id) != -1
-            $element.removeClass("active")
-            return
+        updatePointClass(rel_event_id, "remove")
 
+  updatePointClass = (event_id, action) ->
+    $(".point[data-event]").each (element) ->
+      $element = $(this)
+      if $element.data('event').toString().split(',').indexOf(event_id) != -1
+        if action == "add"
+          $element.addClass("active")
+        else
+          $element.removeClass("active")
 
-
-  #$("#timeline").keepInView(stopAt: $("#events").height() + $("#events").offset().top)
+        return
