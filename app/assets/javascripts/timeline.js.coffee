@@ -6,11 +6,11 @@ $ ->
   $(".point[data-event]")
     .mouseover ->
       $.each $(this).data('event').toString().split(','), (idx, id )-> 
-        $("#event-#{id}").addClass("active")
+        highlightEvent(id, "highlight")
         $(".line[data-event=#{id}]").addClass("active")
     .mouseout ->
       $.each $(this).data('event').toString().split(','), (idx, id )->
-        $("#event-#{id}").removeClass("active")
+        highlightEvent(id, "unhighlight")
         $(".line[data-event=#{id}]").removeClass("active")
     .click ->
       first_id = $(this).data('event').toString().split(',')[0]
@@ -37,10 +37,12 @@ $ ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         updatePointClass(rel_event_id, "add")
+        highlightEvent(rel_event_id, "highlight")
       .mouseout ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
         updatePointClass(rel_event_id, "remove")
+        highlightEvent(rel_event_id, "unhighlight")
 
   updatePointClass = (event_id, action) ->
     $(".point[data-event]").each (element) ->
@@ -50,5 +52,14 @@ $ ->
           $element.addClass("active")
         else
           $element.removeClass("active")
-
         return
+
+  highlightEvent = (event_id, action) ->
+    if action == "highlight"
+      $('.event').addClass('inactive')
+      $("#event-#{event_id}").removeClass("inactive").addClass("active")
+    else
+      $('.event').removeClass('inactive')
+      $("#event-#{event_id}").removeClass("active")
+
+
