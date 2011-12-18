@@ -8,6 +8,6 @@ class TimelineController < ApplicationController
     else
       events = Event.scoped
     end
-    @events = events.order("valid_from DESC, valid_to ASC")
+    @events = events.order("published_at DESC, valid_from DESC, valid_to ASC")
   end
 end
