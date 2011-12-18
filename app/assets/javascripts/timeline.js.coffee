@@ -15,6 +15,7 @@ $ ->
     .click ->
       first_id = $(this).data('event').toString().split(',')[0]
       $("#event-#{first_id}")[0].scrollIntoView(true)
+    .popover(html: true)
 
   $(".event")
     .mouseover ->
@@ -29,6 +30,7 @@ $ ->
     $(".line")
       .click ->
         $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
+      .popover(html: true)
 
 
 

@@ -6,6 +6,7 @@
   </div>
 
   <div class="content">
+    <%= image_tag "/images/#{event.image_path}", :size => "174x116"%>
     <%= simple_format(truncate(event.message, :length => 500)) %>
   </div>
   <%= render 'events/interactions', :event => event %>
