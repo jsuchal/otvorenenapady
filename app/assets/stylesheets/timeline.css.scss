@@ -154,7 +154,6 @@ h2 {
 
   .content {
     padding: 0 20px;
-    height: 150px;
     .image {
       text-align: center;
     }
@@ -231,4 +230,21 @@ h2 {
       }
     }
   }
+}
+
+.event.new {
+  h2 {
+    margin: 10px 20px;
+    margin-bottom: 0;
+    padding-left: 25px;
+    background: #ffffff left no-repeat url("/images/icons/add.png");
+    a {
+      color: green;
+    }
+  }
+  .xlarge {
+    margin-bottom: 10px;
+    width: 515px;
+  }  
+  padding-bottom: 10px;
 }

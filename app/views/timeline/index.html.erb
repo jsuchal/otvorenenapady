@@ -34,6 +34,24 @@
   <div class="row">
     <div class="span5">&nbsp;</div>
     <div id="events" class="span11">
+      <div class="event new">
+        <h2><a href="javascript:void(0)" data-toggle-id="new_message">Napísať novú správu</a></h2>
+
+        <div class="content" id="new_message" style="display: none;">
+          <div class="comments">
+            <div class="comment">
+              <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+              <div class="content">
+                    <div class="input"><%= text_field_tag :title, nil, class: :xlarge %></div>
+                <%= text_area_tag :comment %>
+                <br>
+
+                <div class="input"><%= submit_tag 'Odoslať', class: 'btn primary' %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <% @events.each do |event| %>
         <%= render "events/#{event.category.downcase}", :event => event %>
       <% end %>
