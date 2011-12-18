@@ -161,10 +161,12 @@ h2 {
       border: 1px solid gray;
       float:right;
       margin: 0 10px;
+      margin-bottom: 10px;
     }
   }
 
   .interactions {
+    clear: both;
     border-radius: 5px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -247,4 +249,8 @@ h2 {
     width: 515px;
   }  
   padding-bottom: 10px;
+}
+
+.money {
+  padding-left: 10px;
 }
