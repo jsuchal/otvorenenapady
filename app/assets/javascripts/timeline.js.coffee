@@ -26,4 +26,10 @@ $ ->
       $(".point[data-event=#{id}]").removeClass("active")
       $(".line[data-event=#{id}]").removeClass("active")
 
+    $(".line")
+      .click ->
+        $("#event-#{$(this).data('event')}")[0].scrollIntoView(true)
+
+
+
   #$("#timeline").keepInView(stopAt: $("#events").height() + $("#events").offset().top)
