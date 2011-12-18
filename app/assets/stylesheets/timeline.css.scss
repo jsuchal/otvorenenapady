@@ -213,6 +213,9 @@ h2 {
       overflow: hidden;
       .user {
         float: left;
+        img {
+          border: 1px solid #ccc;
+        }
       }
       .content {
         margin-left: 50px;

@@ -62,6 +62,51 @@
       <% @events.each do |event| %>
         <%= render "events/#{event.category.downcase}", :event => event %>
       <% end %>
+      <div id="event-3" class="event">
+        <div class="header">
+          <p class="tags"><span class="label notice">Doprava</span></p>
+          <h2><a href="#">Parkovanie pri Terne</a></h2>
+          <p class="info">13. decembra 2011</p>
+        </div>
+
+        <div class="content">
+          <div class="image">
+            <img src="images/debil.jpg" alt="">
+          </div>
+          <dl>
+            <dt>Miesto činu:</dt>
+            <dd>Bratislava, Karlova Ves, Terno</dd>
+            <dt>ŠPZ:</dt>
+            <dd>BA956TT</dd>
+            <dt>Diagnóza:</dt>
+            <dd>Aktuálny obrázok pekne zobrazuje logický kvocient osoby, ktorá takto dokázala odparkovať svoje vozidlo.</dd>
+          </dl>
+        </div>
+        <div class="interactions">
+          <p><a class="like" href="">10</a> <a class="dislike" href="">1</a> <a href="#" class="comments many">2 komentáre</a>
+            <a class="watch" href="#">sledovať</a></p>
+
+          <div class="comments">
+            <div class="comment">
+              <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+              <div class="content"><p>Toto fakt nie!</p><span class="author"><a href="#"><a href="#">Ján Suchal</a></span></div>
+            </div>
+            <div class="comment">
+              <div class="user"><%= gravatar_for('kramar.tomas@gmail.com', 40) %></div>
+              <div class="content"><p>Tak som sa ponahlal ne?</p><span class="author"><a href="#">Tomáš Kramár</a></span></div>
+            </div>
+            <div class="comment">
+              <div class="user"><%= gravatar_for('johno@jsmf.net', 40) %></div>
+              <div class="content">
+                <%= text_area_tag :comment %>
+                <br>
+                <%= submit_tag 'Odoslať', class: 'btn primary' %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
