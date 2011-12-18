@@ -154,7 +154,6 @@ h2 {
 
   .content {
     padding: 0 20px;
-    height: 150px;
     .image {
       text-align: center;
     }
@@ -162,10 +161,12 @@ h2 {
       border: 1px solid gray;
       float:right;
       margin: 0 10px;
+      margin-bottom: 10px;
     }
   }
 
   .interactions {
+    clear: both;
     border-radius: 5px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -215,6 +216,9 @@ h2 {
       overflow: hidden;
       .user {
         float: left;
+        img {
+          border: 1px solid #ccc;
+        }
       }
       .content {
         margin-left: 50px;
@@ -238,4 +242,25 @@ h2 {
     margin-top: 10px;
     padding-top: 10px;
   }
+}
+
+.event.new {
+  h2 {
+    margin: 10px 20px;
+    margin-bottom: 0;
+    padding-left: 25px;
+    background: #ffffff left no-repeat url("/images/icons/add.png");
+    a {
+      color: green;
+    }
+  }
+  .xlarge {
+    margin-bottom: 10px;
+    width: 515px;
+  }  
+  padding-bottom: 10px;
+}
+
+.money {
+  padding-left: 10px;
 }
