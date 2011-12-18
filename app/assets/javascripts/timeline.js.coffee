@@ -34,7 +34,7 @@ $ ->
       .click ->
         scrollEventIntoView($("#event-#{$(this).data('event')}"))
         return false
-      .popover(html: true, animate: false)
+      .popover(html: true, animate: false, placement: 'mouse')
       .mouseover ->
         return unless $(this).data('event')
         rel_event_id = $(this).data('event').toString()
